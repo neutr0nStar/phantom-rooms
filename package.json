@@ -1,0 +1,20 @@
+{
+  "name": "phantom-rooms",
+  "version": "1.0.0",
+  "description": "The ideal anonymous chat rooms.",
+  "main": "server.js",
+  "scripts": {
+    "devStart": "nodemon server.js",
+    "start": "node server.js"
+  },
+  "author": "Vishvesh Trivedi",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "socket.io": "^4.3.1",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.14"
+  }
+}
