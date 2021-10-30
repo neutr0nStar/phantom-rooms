@@ -1,4 +1,0 @@
-console.log("Server scripts");
-const uuid = require('uuid');
-
-console.log(uuid.v4());

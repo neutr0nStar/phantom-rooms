@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phantom Rooms</title>
+    <link rel="stylesheet" href="../css/terms.css">
+</head>
+<body class="dark">
+    <%- include('./partials/theme-toggle.ejs') %>
+
+<nav>
+    <div class="navbar">
+      <a class="home-link" href="\">home.</a>
+      <a class="terms-link active" href="\terms">terms.</a>
+      <a class="developers-link" href="\developers">developers.</a>
+    </div>
+  </nav>
+  <div class="hamburger-menu">
+    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
+  </div>
+  <header>
+    <div class="main-title"><h1>Terms of use.</h1></div>
+    <div class="sub-title"><h1>Phantom rooms.</h1></div>
+  </header>
+  <div class="rules-container">
+    <div class="rules-block">
+        <div class="rules">
+            <h3>How is Phantom Rooms different from other chat apps?</h3>
+            <p>Phantom Rooms is a real-time anonymous chat-rooms application, which basically means we won't ask or store your identity. We would also not look into whom you chat to and what you chat about. Infact, Phantom Rooms doesn't even have a database!</p>
+        </div>
+        <div class="rules">
+            <h3>What would I require to chat?</h3>
+            <p>All you need to chat with your peers is a stable 
+                internet connection and an open mind. That’s it!
+                No login or registration is required for chatting at Phantom Rooms.</p>
+        </div>
+        <div class="rules">
+            <h3>How do I proceed to join a room?</h3>
+            <p>After setting your avatar name and selecting your topic
+                prefrences, you can discover the current online
+                rooms related to those interests or create one of your own!</p>
+        </div>
+        <div class="rules">
+            <h3>Is there anything I should keep in mind</h3>
+            <p>At Phantom rooms, we don’t read or store your
+                chats. So we would appreciate responsible 
+                behaviour from our users while chatting.</p>
+        </div>
+    </div>
+</div>
+<script defer>
+    let toggleBtn = document.querySelector('.theme-toggle-button');
+        toggleBtn.addEventListener('click', () => {
+            document.body.classList.toggle('dark');
+        })
+</script>
+</body>
+</html>
