@@ -1,5 +1,5 @@
-# Phantom-rooms
-Project for HackNITR3.0 by team Hypertext Assassins
+# Phantom Rooms.
+Project Submission for HackNITR3.0 by Team : Hypertext Assassins
 ### [Click here](https://www.youtube.com/watch?v=vFHrPPz4haQ) to watch the demo of this project
 
 ## What are Phantom Rooms?
