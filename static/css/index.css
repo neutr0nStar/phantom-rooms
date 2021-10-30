@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&display=swap');
+:root{
+    --dark-purple: #312f49;
+    --dark-peach: #FFB2AC;
+    --light-peach: #FFC6C2;
+    --off-white: #FFF6F9;
+    --btn-accent: #655BE2;
+    --red-btn-accent: #EE6969;
+    --primary-font: 'Sora', monospace;
+    --regular-font-weight: 400;
+    --semi-bold-font-weight: 600;
+    --bold-font-weight: 700;
+    --chat-box-dark: #4E4C67;
+    --chat-box-light: #ffffff;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: var(--off-white);
+    color: var(--dark-purple); 
+    font-family: var(--primary-font);
+    font-weight: var(--bold-font-weight);
+    display: flex;
+    flex-direction: column;
+}
+body.dark{
+    background-color: var(--dark-purple);
+    font-family: var(--primary-font);
+    font-weight: var(--bold-font-weight);
+    color: var(--off-white);
+}
+
+.toggle-div{
+    width: 11vw;
+    height: 11vw;
+    border-radius: 50% 0 50% 50%;
+    background-color: var(--dark-purple);
+    position: fixed;
+    top: -3vmin;
+    right: 0vmin;
+    overflow: hidden;
+}
+body.dark .toggle-div{
+    background-color: var(--off-white);
+}
+
+.theme-toggle-button{
+    overflow: hidden;
+    position: fixed;
+    outline: none;
+    border: none;
+    z-index: 1000 !important;
+    top: 1vmin;
+    right: 2vmin;
+    background: transparent;
+    cursor: pointer;
+    width: 100px;
+    height: 100px;
+}
+.theme-toggle-button svg{
+    fill: var(--off-white);
+    transform: scale(2);
+}
+body.dark .theme-toggle-button svg{
+    fill: var(--dark-purple)
+}
+.navbar{
+    position: fixed;
+    top: 0;
+    left:50%;
+    transform: translateX(-50%);
+    display: inline;
+    padding: 1rem;
+    background: var(--light-peach);
+    border-radius: 0px 0px 15px 15px;
+}
+.navbar>*{
+    padding: 1rem 2rem;
+    font-size: 1.3rem;
+    text-decoration: none;
+    color: var(--chat-box-dark);
+    opacity: 0.45;
+}
+.navbar a.active{
+    opacity: 1;
+}
+.hamburger-menu{
+    position: fixed;
+    top: 0;
+    padding: 3rem;
+    display: none;
+}
+.hamburger-menu svg{
+    transform: scale(2.5);
+    fill: var(--chat-box-dark);
+}
+body.dark .hamburger-menu svg{
+    fill: var(--light-peach);
+}
+.main-title{
+    position: absolute;
+    top: 20vh;
+    left: 8vw;
+    padding-bottom: 3rem;
+    padding-right: 2rem;
+    /* border-bottom: 1px solid var(--chat-box-dark); */
+}
+.main-title h1{
+    font-size: 12.5vmin;
+    color: var(--chat-box-dark);
+}
+body.dark .main-title h1{
+    color: var(--off-white);
+}
+.sub-title{
+    position: absolute;
+    top: 38vh;
+    left: 8vw;
+    padding-bottom: 3rem;
+    /* border-bottom: 1px solid var(--chat-box-dark); */
+}
+.sub-title h1{
+    font-size: 6.5vmin;
+    color: var(--dark-peach);
+}
+body.dark .sub-title h1{
+    color: var(--light-peach);
+}
+.get-started-link{
+    position: absolute;
+    top: 68vh;
+    left: 8vw; 
+    text-decoration: none;
+    color: var(--off-white);
+    font-size: 2.3rem;
+}
+body.dark .get-started-link{
+    color: var(--chat-box-dark);
+}
+.cta-btn{
+    padding: 3vmin 10vmin;
+    background: var(--chat-box-dark);
+    border-radius: 15px;
+}
+body.dark .cta-btn{
+    background: var(--light-peach);
+}
+
+@media(max-width:1024px){
+    .hamburger-menu{
+        display: block;
+    }
+    nav{
+        display: none;
+    }
+    .theme-toggle-button{
+        /* display: none; */
+        background: var(--dark-purple);
+        border-radius: 15px;
+        transform: scale(0.75);
+    }
+    body.dark .theme-toggle-button{
+        background: var(--light-peach);
+    }
+    .toggle-div{
+        display: none;
+    }
+    .sub-title{
+        top: 45vh;
+    }
+}
+@media (max-width: 380px){
+    .main-title h1{
+        font-size: 15vmin;
+    }
+    .sub-title h1{
+        font-size: 7vmin;
+    }
+    .cta-btn{
+        transform: scale(0.8);
+        font-size: 2rem;
+    }
+    .theme-toggle-button{
+        transform: scale(0.5);
+    }
+    .hamburger-menu svg{
+        transform: scale(2);
+    }
+}
