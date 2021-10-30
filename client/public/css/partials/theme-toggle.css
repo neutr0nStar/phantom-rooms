@@ -1,0 +1,109 @@
+:root{
+    --dark-purple: #312f49;
+    --dark-peach: #FFB2AC;
+    --light-peach: #FFC6C2;
+    --off-white: #FFF6F9;
+    --btn-accent: #655BE2;
+    --red-btn-accent: #EE6969;
+    --primary-font: 'Sora', monospace;
+    --regular-font-weight: 400;
+    --semi-bold-font-weight: 600;
+    --bold-font-weight: 700;
+    --chat-box-dark: #4E4C67;
+    --chat-box-light: #ffffff;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: var(--off-white);
+    color: var(--dark-purple); 
+    font-family: var(--primary-font);
+    font-weight: var(--bold-font-weight);
+    display: flex;
+    flex-direction: column;
+}
+body.dark{
+    background-color: var(--dark-purple);
+    font-family: var(--primary-font);
+    font-weight: var(--bold-font-weight);
+    color: var(--off-white);
+}
+
+.toggle-div{
+    width: 11vw;
+    height: 11vw;
+    border-radius: 50% 0 50% 50%;
+    background-color: var(--dark-purple);
+    position: fixed;
+    top: -3vh;
+    right: 0vh;
+    overflow: hidden;
+}
+body.dark .toggle-div{
+    background-color: var(--off-white);
+}
+
+.theme-toggle-button{
+    overflow: hidden;
+    position: fixed;
+    outline: none;
+    border: none;
+    z-index: 1000 !important;
+    top: 2.5vh;
+    right: 3.5vh;
+    background: transparent;
+    cursor: pointer;
+    width: 100px;
+    height: 100px;
+}
+.theme-toggle-button svg{
+    fill: var(--off-white);
+    transform: scale(2);
+}
+body.dark .theme-toggle-button svg{
+    fill: var(--dark-purple)
+}
+@media(max-width:1024px){
+    .hamburger-menu{
+        display: block;
+    }
+    nav{
+        display: none;
+    }
+    .theme-toggle-button{
+        /* display: none; */
+        background: var(--dark-purple);
+        border-radius: 15px;
+        transform: scale(0.75);
+    }
+    body.dark .theme-toggle-button{
+        background: var(--light-peach);
+    }
+    .toggle-div{
+        display: none;
+    }
+    .sub-title{
+        top: 45vh;
+    }
+}
+@media (max-width: 380px){
+    .main-title h1{
+        font-size: 15vmin;
+    }
+    .sub-title h1{
+        font-size: 7vmin;
+    }
+    .cta-btn{
+        transform: scale(0.8);
+        font-size: 2rem;
+    }
+    .theme-toggle-button{
+        transform: scale(0.5);
+    }
+    .hamburger-menu svg{
+        transform: scale(2);
+    }
+}

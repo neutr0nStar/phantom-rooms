@@ -1,0 +1,205 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&display=swap');
+
+
+header{
+    /* border: 2px solid black; */
+    display: flex;
+    align-items: baseline;
+    padding: 2rem 5rem;
+    justify-content: space-between;
+}
+.page-title{
+    font-size: 4rem;
+}
+.phantom-title{
+    margin-right: 10vw;
+    font-size: 2rem;
+}
+.form-section{
+    position: relative;
+    top: 0vh;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 1em;
+    width: 80%;
+    border-bottom: 3px solid var(--dark-purple);
+}
+body.dark .form-section{
+    border-bottom: 3px solid var(--light-peach);
+}
+form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+body.dark form{
+    color: var(--light-peach);
+}
+form>*{
+    /* border: 2px solid black; */
+    width: 100%;
+}
+.form-left{
+    margin-left: 1rem;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    flex-direction: column;
+    border-right: 3px solid var(--dark-purple);
+}
+.form-left>*{
+    width: 100%;
+}
+.form-left h1{
+    padding-bottom: 0.5em;
+}
+body.dark .form-left{
+    border-right: 3px solid var(--light-peach);
+}
+.form-left>*{
+    padding: 0.5em;
+}   
+.name-field span, .room-info span{
+    font-size: 24px;
+    font-family: var(--primary-font);
+    font-weight: var(--bold-font-weight);
+}
+.name-field input, .room-info input{
+    border: 3px solid var(--dark-purple);
+    border-radius: 10px; 
+    margin-left: 5px;
+    width: 90%;
+    padding: 5px;
+    font-size: 20px;
+    font-family: var(--primary-font);
+    font-weight: var(--semi-bold-font-weight)
+}
+body.dark .name-field input, body.dark .room-info input{
+    border: 3px solid var(--light-peach);
+}
+.cta-btns{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: flex-start;
+    /* flex-direction: column; */
+}
+.cta-btns a, .cta-btns input{
+    border: none;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: var(--bold-font-weight);
+    margin: 5px 10px;
+    color: var(--off-white);
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+}
+.cta-btns a{
+    margin-left: 16px;
+    transform: scale(0.95);
+    background: var(--dark-purple);
+}
+.search-rooms-btn{
+    background: var(--btn-accent);
+}
+body.dark .cta-btns a{
+    background: var(--light-peach);
+    color: var(--dark-purple);
+}
+.cta-btns input{
+    background: var(--btn-accent);
+}
+.interests-list{
+    margin-left: 25px;
+}
+.interests-list span{
+    font-size: 24px;
+    margin-right: 10px;
+}
+.interests-block{
+    display: flex;
+    justify-content: center;
+}
+.interests-block>*{
+    width: 50%;
+}
+.list-1>*, .list-2>*{
+    padding: 1rem;
+    margin: 5px;
+    background: var(--light-peach);
+    border-radius:10px;
+}
+body.dark .list-1>*, .list-2>*{
+    color: var(--dark-purple);
+}
+.room-cards-block{
+    margin: 2rem 3rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 3px solid var(--dark-purple);
+    visibility: hidden;
+}
+body.dark .room-cards-block{
+    border-bottom: 3px solid var(--light-peach);
+}
+.room-card{
+    padding: 1.5rem;
+    width: 100%;
+    border-radius: 20px;
+}
+.room-card.odd{
+    background: var(--dark-purple);
+    color: var(--off-white);
+}
+body.dark .room-card.odd{
+    background: var(--off-white);
+    color: var(--dark-purple);
+}
+.room-card.even{
+    background: var(--light-peach);
+    color: var(--dark-purple);
+}
+.room-card>*{
+    margin-bottom: 15px;
+}
+.tags-section{
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    margin-bottom: 25px;
+}
+.tags-section>*{
+    margin: 5px;
+    border-radius: 30px;
+    padding: 5px 10px;
+}
+.room-card.odd .tags-section>*{
+    background-color: var(--light-peach);
+    color: var(--dark-purple);
+}
+.room-card.even .tags-section>*{
+    background-color: var(--dark-purple);
+    color: var(--light-peach);
+}
+
+.room-card button{
+    border: none;
+    background: transparent;
+}
+.room-card a div, .join-room{
+    border-radius: 10px;
+    display: inline;
+    padding: 7px 12px;
+    background-color: var(--btn-accent);
+    font-size: 20px;
+    text-decoration: none;
+    color: var(--off-white);
+    font-family: var(--primary-font);
+    font-weight: var(--bold-font-weight);
+}
+.create-rooms-title h1{
+    text-align: center;
+    margin: 25px 0px;
+}
