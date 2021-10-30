@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Phantom Rooms</title>
+    <link rel="stylesheet" href="../css/index.css" />
+  </head>
+  <body class="dark">
+    <%- include('./partials/theme-toggle.ejs') %>
+    <nav>
+      <div class="navbar">
+        <a class="home-link active" href="\">home.</a>
+        <a class="terms-link" href="\terms">terms.</a>
+        <a class="developers-link" href="\developers">developers.</a>
+      </div>
+    </nav>
+    <div class="hamburger-menu">
+      <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
+    </div>
+    <div class="main-title"><h1>Phantom Rooms.</h1></div>
+    <div class="sub-title"><h1>anonymous chatting. <br> full expression. <br> zero judgements. <br></h1></div>
+    <a href="\discover-rooms" class="get-started-link"><div class="cta-btn">get started</div></a>
+    <script defer>
+      let toggleBtn = document.querySelector(".theme-toggle-button");
+      toggleBtn.addEventListener("click", () => {
+        document.body.classList.toggle("dark");
+      });
+    </script>
+  </body>
+</html>

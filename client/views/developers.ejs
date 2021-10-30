@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phantom Rooms</title>
+    <link rel="stylesheet" href="../css/developers.css">
+</head>
+<body class="dark">
+    <%- include('./partials/theme-toggle.ejs') %>
+<nav>
+    <div class="navbar">
+      <a class="home-link" href="\">home.</a>
+      <a class="terms-link" href="\terms">terms.</a>
+      <a class="developers-link active" href="\developers">developers.</a>
+    </div>
+  </nav>
+  <div class="hamburger-menu">
+    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
+  </div>
+  <header>
+    <div class="main-title"><h1>Developers.</h1></div>
+    <div class="sub-title"><h1>Phantom rooms.</h1></div>
+  </header>
+  <div class="card-block-two">
+    <div class="card card-three">
+      <div class="profile-content">
+        <div class="profile-top">
+          <div class="codepen-profile"><a href="https://codepen.io/nerdyvisky" target="_blank"><img src="https://docs.google.com/uc?id=1K86A4sXvrMFklcOPGMFHyFLAkx5sXf9m" alt=""></a></div>
+          <div class="profile-image"><img src="assets/img/vishvesh_profile.jpeg" alt="" /></div>
+          <div class="github-profile"><a href="https://github.com/NerdyVisky" target="_blank"><img src="https://docs.google.com/uc?id=1UjB09FirJV6p0dkCMFQEjGxIV8JUisYu" alt=""></a></div>
+        </div>
+        <div class="profile-title">
+            <h1>Vishvesh Trivedi</h1>
+            <h4>Front End Developer</h4>
+        </div>
+        <div class="profile-bottom">
+          <p>
+            UI/UX (Figma) | HTML5 | SASS | Vanilla JS | Node.js
+          </p>
+          <a href="https://github.com/NerdyVisky/NerdyVisky/blob/main/Vishvesh%20Trivedi%20-%20Resume.pdf" class="full-profile-link">View Full Profile</a>
+        </div>
+      </div>
+    </div>
+    <div class="card card-three">
+        <div class="profile-content">
+          <div class="profile-top">
+            <div class="codepen-profile"><a href="https://codepen.io/nerdyvisky" target="_blank"><img src="https://docs.google.com/uc?id=1K86A4sXvrMFklcOPGMFHyFLAkx5sXf9m" alt=""></a></div>
+            <div class="profile-image"><img src="assets/img/sneharsh_profile.jpeg" alt="" /></div>
+            <div class="github-profile"><a href="https://github.com/neutr0nStar" target="_blank"><img src="https://docs.google.com/uc?id=1UjB09FirJV6p0dkCMFQEjGxIV8JUisYu" alt=""></a></div>
+          </div>
+          <div class="profile-title">
+              <h1>Sneharsh Belsare</h1>
+              <h4>Full Stack Developer</h4>
+          </div>
+          <div class="profile-bottom">
+            <p>
+              MERN | Django | Flutter
+            </p>
+            <a href="#" class="full-profile-link">View Full Profile</a>
+          </div>
+        </div>
+      </div>
+      <div class="card card-three">
+        <div class="profile-content">
+          <div class="profile-top">
+            <div class="codepen-profile"><a href="#" target="_blank"><img src="https://docs.google.com/uc?id=1K86A4sXvrMFklcOPGMFHyFLAkx5sXf9m" alt=""></a></div>
+            <div class="profile-image"><img src="assets/img/ayush_profile.jpeg" alt="" /></div>
+            <div class="github-profile"><a href="https://github.com/ayush572" target="_blank"><img src="https://docs.google.com/uc?id=1UjB09FirJV6p0dkCMFQEjGxIV8JUisYu" alt=""></a></div>
+          </div>
+          <div class="profile-title">
+              <h1>Ayush Daga</h1>
+              <h4>Backend Developer</h4>
+          </div>
+          <div class="profile-bottom">
+            <p>
+            Node.js | MongoDB | Python | MySQL
+            </p>
+            <a href="#" class="full-profile-link">View Full Profile</a>
+          </div>
+        </div>
+      </div>
+  </div>
+<script defer>
+    let toggleBtn = document.querySelector('.theme-toggle-button');
+        toggleBtn.addEventListener('click', () => {
+            document.body.classList.toggle('dark');
+        })
+</script>
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="/css/rooms.css" />
+    <title class="web-title">Document</title>
+  </head>
+  <body class="dark">
+    <%- include('./partials/theme-toggle.ejs') %>
+    <header>
+      <div>
+        <h1 class="page-title"></h1>
+        <h3 class="created-by">By </h3>
+      </div>
+      <button class="leave-room-btn">
+       leave room
+      </button>
+    </header>
+    <aside class="participants-block">
+      <div class="participants-title">
+        <span>participants</span>
+        <% let userNum = 0; %>
+        <% participants.forEach(user => { %>
+          <% userNum++; %>
+        <% }) %>
+        <span class="participants-number"><%= userNum%></span>
+      </div>
+      <div class="participants-list">
+        <% participants.forEach(user => { %>
+          <div class="participant"><%= user %></div>
+        <% }) %>
+      </div>
+    </aside>
+    <section class="main">
+      <section class="chat-window">
+        <div class="chat-screen">
+      </section>
+    </section>
+    <div class="chat-input">
+      <textarea name="chatbox" id="msgText" cols="30" rows="10"></textarea>
+      <button class="send-btn" id="sendBtn" >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          height="24px"
+          viewBox="0 0 24 24"
+          width="24px"
+          fill="#000000"
+        >
+          <path d="M0 0h24v24H0V0z" fill="none" />
+          <path
+            d="M4.01 6.03l7.51 3.22-7.52-1 .01-2.22m7.5 8.72L4 17.97v-2.22l7.51-1M2.01 3L2 10l15 2-15 2 .01 7L23 12 2.01 3z"
+          />
+        </svg>
+      </button>
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script defer>
+    const username = sessionStorage.getItem('userName');
+    document.querySelector(".page-title").innerHTML = sessionStorage.roomName ?? "Room name"
+    document.querySelector(".web-title").innerHTML = sessionStorage.roomName ?? "Room name"
+    document.querySelector(".created-by").innerHTML += sessionStorage.roomAdmin ?? "Room admin"
+
+    const socket = io('http://localhost:3002')
+    
+    document.querySelector(".leave-room-btn").onclick = function() {
+      socket.emit("leaveRoom", {user: username, roomName: sessionStorage.roomName})
+      sessionStorage.removeItem("roomName")
+      sessionStorage.removeItem("roomAdmin")
+      window.location.href="/discover-rooms"
+    }
+
+    socket.emit('joinedRoom', {user: username, roomName: sessionStorage.roomName})
+
+    document.querySelector('#sendBtn').onclick = function() {
+      if(document.querySelector("#msgText") !== "") {
+        const el = document.createElement('div')
+        el.classList.add('chat-block', 'user-chat')
+        const el1 = document.createElement('div')
+        el1.classList.add('sender-name')
+        el1.innerHTML = username;
+        el.appendChild(el1)
+        const el2 = document.createElement('div')
+        el2.classList.add('message-area')
+        el2.innerHTML = document.querySelector("#msgText").value
+        el.appendChild(el2)
+        const el3 = document.createElement('div')
+        el3.classList.add('timestamp-area')
+        el3.innerHTML = new Date().toLocaleTimeString().substring(0, 5)
+        el3.innerHTML += " PM";
+        el.appendChild(el3)
+        document.querySelector(".chat-screen").appendChild(el)
+        
+        el.scrollIntoView(true)
+        socket.emit('newMessage', {
+          message: document.querySelector("#msgText").value,
+          user: username,
+          sendTime: new Date().toLocaleTimeString().substring(0, 5),
+          roomName: sessionStorage.roomName
+        })
+        document.querySelector("#msgText").value = ""
+
+      }
+    }
+
+    socket.on('message', function ({message, user, sendTime}) {
+      console.log({message, user, sendTime})
+      const el = document.createElement('div')
+      el.classList.add('chat-block', 'other-chat')
+      const el1 = document.createElement('div')
+      el1.classList.add('sender-name')
+      el1.innerHTML = user;
+      el.appendChild(el1)
+      const el2 = document.createElement('div')
+      el2.classList.add('message-area')
+      el2.innerHTML = message
+      el.appendChild(el2)
+      const el3 = document.createElement('div')
+      el3.classList.add('timestamp-area')
+      el3.innerHTML = new Date().toLocaleTimeString().substring(0, 5)
+      el.appendChild(el3)
+      document.querySelector(".chat-screen").appendChild(el)
+      el.scrollIntoView(true)
+    })
+
+    </script>
+  </body>
+</html>
